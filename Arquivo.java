@@ -191,4 +191,11 @@ public class Arquivo<T extends Registro> {
         }
     }
 
+    // MÉTODO PARA LIMPAR O ARQUIVO
+    public void clear() throws Exception {
+        file.setLength(header);
+        file.seek(0);
+        file.writeInt(0);
+    }
+
 }
