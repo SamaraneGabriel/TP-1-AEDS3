@@ -9,17 +9,20 @@ public class Movie implements Registro{
     private String director;
     private int year;
     
-
+    // CONSTRUTOR DA CLASSE MOVIE
     public Movie() {
         this(-1,"", "", -1);
     }
 
+    // CONSTRUTOR DA CLASSE MOVIE
     public Movie(int id,String title, String director, int year) {
         this.id = id;
         this.title = title;
         this.director = director;
         this.year = year;
     }
+
+    // MÉTODOS GETTERS E SETTERS
 
     public int getId() {
         return id;
@@ -53,6 +56,8 @@ public class Movie implements Registro{
         this.year = year;
     }
 
+    // MÉTODOS PARA CONVERSÃO DE OBJETO EM ARRAY DE BYTES E VICE-VERSA
+    
     public byte[] toByteArray() throws Exception {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         DataOutputStream dos = new DataOutputStream(baos);
@@ -73,6 +78,7 @@ public class Movie implements Registro{
         setYear(dis.readInt());
     }
 
+    // MÉTODO TOSTRING
     public String toString() {
         return "Title: " + getTitle() + "\nDirector: " + getDirector() + "\nYear: " + getYear();
     }

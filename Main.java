@@ -3,6 +3,7 @@ public class Main {
     public static void main(String[] args){
         Arquivo<Movie> filmesArq;
         try {
+            System.out.println("Teste de Arquivo de Filmes");
             filmesArq = new Arquivo<>("filmes.db", Movie.class.getConstructor());
             Movie primeiro = new Movie(-1, "testeGRANDE", "testeGRANDE", 2000);
             Movie segundo = new Movie(-1, "testeMed", "testeMed", 2000);

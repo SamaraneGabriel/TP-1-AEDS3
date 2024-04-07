@@ -7,6 +7,8 @@ public class Arquivo<T extends Registro> {
     private String fileName = "";
     Constructor<T> constructor;
 
+
+    // CONSTRUTOR DA CLASSE ARQUIVO
     public Arquivo(String fn, Constructor<T> constructor) throws Exception {
         this.fileName = fn;
         this.constructor = constructor;
@@ -17,6 +19,7 @@ public class Arquivo<T extends Registro> {
         }
     }
 
+    // MÉTODO PARA REAPROVEITAMENTO DE ESPAÇO
     public boolean reaproveitamento(byte[] ba) throws Exception {
         boolean controle = false;
         long endereco;
@@ -43,6 +46,7 @@ public class Arquivo<T extends Registro> {
         return controle;
     }
 
+    // MÉTODO PARA CRIAÇÃO DE REGISTRO
     public int create(T object) throws Exception {
         file.seek(0);
         int lastId = file.readInt();
@@ -65,6 +69,7 @@ public class Arquivo<T extends Registro> {
         return object.getId();
     }
 
+    // MÉTODO PARA LEITURA DE REGISTRO
     public T read(int id) throws Exception {
         T object = constructor.newInstance();
         byte[] ba;
@@ -89,6 +94,7 @@ public class Arquivo<T extends Registro> {
         return null;
     }
 
+    // MÉTODO PARA DELEÇÃO DE REGISTRO
     public boolean delete(int id) throws Exception {
         T object = constructor.newInstance();
         byte deleted;
@@ -117,6 +123,7 @@ public class Arquivo<T extends Registro> {
         return false;
     }
 
+    // MÉTODO PARA ATUALIZAÇÃO DE REGISTRO
     public boolean update(T objAlterado) throws Exception {
         T object = constructor.newInstance();
         byte[] ba;
@@ -160,6 +167,7 @@ public class Arquivo<T extends Registro> {
         return false;
     }
 
+    // MÉTODO PARA LISTAGEM DE REGISTROS
     public void listar() throws Exception {
         T object = constructor.newInstance();
         byte lapide;
