@@ -3,6 +3,10 @@ Respositório para o primeiro TP de AEDS-3 do curso de Ciência da Computação 
 
 Alunos: Gabriel Samarane, João Madeira
 
+Descrição:
+
+Nosso projeto desenvolve um sistema CRUD (Create, Read, Update, Delete) que implementa um mecanismo de gerenciamento de espaço para registros excluídos. Esse método de gerenciamento de espaço é projetado para otimizar o uso de espaço de armazenamento reutilizando áreas previamente ocupadas por registros que foram deletados. Quando um novo registro é criado ou um registro existente é atualizado para um tamanho maior, nosso sistema automaticamente verifica a disponibilidade de espaços deixados por registros excluídos que sejam grandes o suficiente para acomodar o novo ou atualizado registro. Além disso, criamos uma classe Movie.java para testar as funcionalidades no CRUD.
+
 CheckList:
 
 1- O que você considerou como perda aceitável para o reuso de espaços vazios, isto é, quais são os critérios para a gestão dos espaços vazios?
